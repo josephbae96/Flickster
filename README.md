@@ -5,7 +5,7 @@ Flickster is an app that allows users to browse movies from the [The Movie Datab
 
 ---
 
-## Flix Part 1
+## Flickster Part 1
 
 ### User Stories
 
