@@ -21,13 +21,11 @@ Flickster is an app that allows users to browse movies from the [The Movie Datab
 
 ### App Walkthough GIF
 
-`TODO://` Add the URL to your animated app walkthough `gif` in the image tag below, `YOUR_GIF_URL_HERE`. Make sure the gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after after adding gif)
-
-<img src="YOUR_GIF_URL_HERE" width=250><br>
+<img src="walkthrough2.gif" width=250><br>
 
 ### Notes
 
-Describe any challenges encountered while building the app.
+Was not able to do the bonus stretch stories due to time constraints. Also the app crashes when viewed on horizontal display, preliminary look appears to be due to a buffer overflow, maybe the local emulator memory is full and the app crashes due to that
 
 ## Open-source libraries used
 - [Android Async HTTP](https://github.com/loopj/android-async-http) - Simple asynchronous HTTP requests with JSON parsing
@@ -56,7 +54,7 @@ Describe any challenges encountered while building the app.
 <img src="walkthrough.gif" width=250><br>
 
 ### Notes
-Describe any challenges encountered while building the app.
+
 Changed the default location of the application on my computer, which made android studio crash and the gradle freak out. 
 
 ### Open-source libraries used
