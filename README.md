@@ -35,7 +35,7 @@ Describe any challenges encountered while building the app.
 
 ---
 
-## Flix Part 1
+## Flickster Part 1
 
 ### User Stories
 
