@@ -72,6 +72,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
                 imageUrl = movie.getBackdropPath();
             }
 
+            Glide.with(context).load("http://via.placeholder.com/300.png");
+
             Glide.with(context).load(movie.getPosterPath()).into(ivPoster);
 //            // Add click listener on the whole row
 //            container.setOnClickListener((view){
