@@ -1,6 +1,7 @@
 package com.example.flickster.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -13,8 +14,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.flickster.DetailActivity;
 import com.example.flickster.R;
 import com.example.flickster.models.Movie;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -61,9 +65,10 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvOverview = itemView.findViewById(R.id.tvOverView);
             ivPoster = itemView.findViewById(R.id.ivPoster);
+            container = itemView.findViewById(R.id.container);
         }
 
-        public void bind(Movie movie) {
+        public void bind(final Movie movie) {
             tvTitle.setText(movie.getTitle());
             tvOverview.setText(movie.getOverview());
             String imageUrl = movie.getPosterPath();
@@ -72,16 +77,21 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
                 imageUrl = movie.getBackdropPath();
             }
 
+            //placeholder image loads first, then movie image
             Glide.with(context).load("http://via.placeholder.com/300.png");
 
             Glide.with(context).load(movie.getPosterPath()).into(ivPoster);
 //            // Add click listener on the whole row
-//            container.setOnClickListener((view){
-//                //Navigate to detail activity on tap
-//                    Intent i = new Intent(context, DetailActivity.class);
-//                    i.putExtra("movie", Parcels.wrap(movie));
-//                    context.startActivity(i);
-//            });
+            container.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    //Navigate to detail activity on tap
+                    Intent i = new Intent(context, DetailActivity.class);
+                    i.putExtra("movie", Parcels.wrap(movie));
+                    context.startActivity(i);
+                }
+            });
+
         }
     }
 
